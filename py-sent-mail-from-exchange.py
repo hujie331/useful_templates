@@ -19,12 +19,12 @@ from exchangelib import Mailbox
 
 #BaseProtocol.HTTP_ADAPTER_CLS = NoVerifyHTTPAdapter
 
-# cred = Credentials(r'sony.com\jhu1', 'HUjie@20211023')
+# cred = Credentials(r'sony.com\jhu1', 'AD credentials')
 #
 # config = Configuration(server='https://outlook.office365.com/', credentials=cred, auth_type=NTLM)
 # a = Account(primary_smtp_address='jay.hu2@sony.com', config=config, autodiscover=False, access_type=DELEGATE)
 
-credentials = Credentials('sony.com\jhu1', 'HUjie@20211023')
+credentials = Credentials('sony.com\jhu1', 'AD credentials')
 account = Account(primary_smtp_address='(jay.hu2@sony.com)', credentials=credentials, autodiscover=True)
 
 
@@ -32,7 +32,7 @@ account = Account(primary_smtp_address='(jay.hu2@sony.com)', credentials=credent
 m = Message(
     account=account,
     folder=account.sent,
-    subject=u'测试邮件',
+    subject=u'testing mail',
     body= 'This is a test email',
     to_recipients=[Mailbox(email_address='jay.hu2@sony.com')]
 )
